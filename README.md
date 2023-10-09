@@ -74,3 +74,46 @@ The routing,
 ```jsx
 <Link path="/contactpage">Some Path </Link>
 ```
+
+
+# Faced an issue
+
+```console
+npx create-react-app my-app
+```
+no longer works
+
+<br>
+<br>
+
+### now I have to install react environment using something called `vite` 
+
+```console
+npm install vite@latest
+```
+> Problem is that the `react router` no longer works with those syntax somehow.
+> If I install react with vite then this routing works
+> And ofcurse I have to install react-router-dom using npm
+
+```javascript
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import "./index.css";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <React.StrictMode>
+    <RouterProvider router={router} />
+  </React.StrictMode>
+);
+```
